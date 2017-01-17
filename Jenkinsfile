@@ -41,15 +41,6 @@ node {
         }
     }
 
- //   stage('frontend tests') {
-  //      try {
-  //          sh "gulp test"
-  //      } catch(err) {
-            throw err
-   //     } finally {
-            step([$class: 'JUnitResultArchiver', testResults: '**/target/test-results/karma/TESTS-*.xml'])
-   //     }
-   // }
 
     stage('packaging') {
         sh "mvn package -Pprod -DskipTests"
