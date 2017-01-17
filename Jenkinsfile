@@ -31,15 +31,15 @@ node {
         sh "mvn clean"
     }
 
-    stage('backend tests') {
+    /*stage('backend tests') {
         try {
             sh "mvn test"
         } catch(err) {
             throw err
         } finally {
-            step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+            step([$class: 'JUnitResultArchiver', testResults: '(*)(*)/target/surefire-reports/TEST-*.xml'])// replace (*) ->*
         }
-    }
+    }*/
 
 
     stage('packaging') {
